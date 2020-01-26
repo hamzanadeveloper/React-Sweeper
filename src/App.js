@@ -23,11 +23,12 @@ function App() {
     width: 48,
     height: 48,
     backgroundColor: '#555',
-    color: 'black',
+    color: 'white',
+    fontWeight: 'bold',
     border: '1px solid black',
     verticalAlign: 'top',
     fontSize: '32px',
-    fontFamily: 'Arial, Helvetica, sans-serif;',
+    fontFamily: 'Montserrat, sans-serif',
     display: 'inline-block'
   }
 
