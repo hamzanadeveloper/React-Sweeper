@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
   const [bombs, setBombs] = useState([])
   const [visited, setVisited] = useState([])
+
   const buttonStyle = {
     width: 40,
     height: 40,
@@ -19,10 +20,11 @@ function App() {
     display: 'inline-block'
   }
   const visitStyle = {
-    width: 50,
-    height: 50,
-    backgroundColor: '#444',
+    width: 48,
+    height: 48,
+    backgroundColor: '#555',
     color: 'black',
+    border: '1px solid black',
     verticalAlign: 'top',
     fontSize: '32px',
     fontFamily: 'Arial, Helvetica, sans-serif;',
@@ -30,7 +32,6 @@ function App() {
   }
 
   const generateBombs = () => {
-    console.log("Generating bombs")
     let bombArr = Array(10).fill(0).map(elem => Array(10).fill(0))
 
     for(let i = 0; i < bombArr.length; i++){
