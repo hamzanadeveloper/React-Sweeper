@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
@@ -64,7 +64,10 @@ function App() {
   }
 
   const visitCell = (i, j) => {
-    if(bombs[i][j] == 'X') alert("You lost! Generate again!")
+    if(bombs[i][j] == 'X') {
+      alert("You lost! Generate again!")
+      window.location.reload();
+    }
     dfsCells(i, j)
     visited[i][j] = 1
     setVisited([...visited])
@@ -87,6 +90,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <div className={'title'}> REACT-SWEEPER </div>
+        <div className={'subtext'}> This is a React version of the classic Minesweeper game! Hit <i>Generate New Game</i>!</div>
+
         {bombs.map((arr, index) =>
           <div>
             {arr.map((elem, i) =>
@@ -98,8 +104,9 @@ function App() {
             )}
           </div>
         )}
-        <button onClick={() => generateBombs()}
-        >Generate</button>
+        <button
+          className={'generate'}
+          onClick={() => generateBombs()}>Generate New Game</button>
       </header>
 
     </div>
