@@ -5,5 +5,5 @@ Welcome to React-Sweeper! This is Minesweeper I built in an evening using React.
 - React (with Hooks!)
 - Create-React-App
 - ES6+ JavaScript
-- Node
+- NodeJS
 - CS Fundamentals (Depth First Search)
